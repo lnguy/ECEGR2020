@@ -13,16 +13,16 @@ void Pyramid(int lines);
 int main()
 {
 	//Factorial Test
-	long num1;
+	/*long num1;
 	for(int i=0;i<5;i++) // For loop to interate the test 5 times
 	{
 		printf("Enter a number\n");
 		scanf(" %ld", &num1);
 		printf("the factorial of %ld is %ld\n\n", num1, Factorial(num1));
-	}
+	}*/
 	
 	//IsPalindrome Test
-	long num2;
+	/*long num2;
 	for(int i=0;i<5;i++) // For loop to interate the test 5 times
 	{
 		printf("Enter a number\n");
@@ -35,37 +35,44 @@ int main()
 		{
 			printf("%ld is not a palidrome\n\n", num2);
 		}
-	}
+	}*/
 	
 	//HighestBitSet Test
-	int num3;
+	/*int num3;
 	for(int i=0;i<5;i++) // For loop to interate the test 5 times
 	{
 		printf("Enter a number\n");
 		scanf(" %d", &num3);
 		HighestBitSet(num3);
-	}
+	}*/
 	
 	//ReverseIt and ReverseItAgain Test
-	ReverseIt(); // run individually 
-	ReverseItAgain(); // doesn't write the file when both are ran like this
+	/*ReverseIt();*/ // run individually 
+	/*ReverseItAgain();*/ // doesn't write the file when both are ran like this
 	
 	//Pyramid Test
-	int lineNum;
+	/*int lineNum;
 	printf("Enter a number\n");
 	scanf(" %d", &lineNum);
-	Pyramid(lineNum);
+	Pyramid(lineNum);*/
 }
 
 //Factorial Function
 long Factorial(long num)
 {
 	long product = 1; // product variable to keep track of the final product value
-	for(int i = 1;i<=num;i++) // For loop that iterates from 1 to num incramenting i by 1
+	if(num<=0)
 	{
-		product *= i; // multiplies the current i against the final product
+		return 0;
 	}
-	return product; // returns the final product (the factorial)
+	else
+	{
+		for(int i = 1;i<=num;i++) // For loop that iterates from 1 to num incramenting i by 1
+		{
+			product *= i; // multiplies the current i against the final product
+		}
+		return product; // returns the final product (the factorial)
+	}
 }
 
 //IsPalindrome Function
@@ -116,8 +123,8 @@ void ReverseIt(void)
 	for(int i=0; i<5; i++) // for loop to take the inputs and put them into the float array
 	{
 		float num;
-		printf("%d. Enter a number:", i+1);
-		scanf(" %f\n", &num);
+		printf("%d. Enter a number:\n", i+1);
+		scanf("%f", &num);
 		nums[i] = num;
 	}
 	
