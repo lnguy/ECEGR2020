@@ -18,21 +18,17 @@ typedef struct student
 void ReverseArray(void);
 Student* createStudent(void);
 void sortGPA(Student** inputArray);
-void readStudentRecords(void);
+void readStudentRecords(Student** array_in);
 
 int main()
 {
 	
-	
-	
 	ReverseArray();
-	
-	
 	
 	printf("\n\nEnter the number of students in the class: ");
 	scanf("%d", &numInput);
 	Student **arrayStudent = (Student**) malloc(numInput * sizeof(Student*));
-	/*for(int i = 0; i < numInput; i++)
+	for(int i = 0; i < numInput; i++)
 	{
 		arrayStudent[i] = createStudent();
 	}
@@ -45,9 +41,11 @@ int main()
 		fprintf(filePtr, "\nStudent First Name: %s", arrayStudent[i]->firstName);
 		fprintf(filePtr, "\nStudent Last Name: %s", arrayStudent[i]->lastName);
 		fprintf(filePtr, "\nStudent GPA: %f", arrayStudent[i]->GPA);
-	}*/
+	}
 	free(arrayStudent);
-	readStudentRecords();
+	Student** newStudentArray = (Student**) malloc(numInput * sizeof(Student*));
+	readStudentRecords(newStudentArray);
+	free(newStudentArray);
 }
 
 void ReverseArray()
@@ -108,18 +106,17 @@ void sortGPA(Student** inputArray)
 	}
 }
 
-void readStudentRecords()
+void readStudentRecords(Student** array_in)
 {
 	printf("=========STUDENT RECORDS=========\n");
 	char first_out[30], last_out[30];
 	int numOut, id_out;
-	float gpa_out;
+	float gpa_out, gpa_avg;
 	
 	filePtr = fopen("StudentRecords.txt", "r");
 	fscanf(filePtr, "Number of students: %d", &numOut);
 	printf("\nNumber of students: %d", numOut);
-
-	Student** newStudentArray = (Student**) malloc(numInput * sizeof(Student*));
+	
 	for(int i=0; i<numInput; i++)
 	{
 		Student* piperPtr = (Student*) malloc(sizeof(Student));
@@ -140,8 +137,13 @@ void readStudentRecords()
 		piperPtr->GPA = gpa_out;
 		printf("\nStudent GPA: %f", gpa_out);
 		
-		newStudentArray[i] = piperPtr;
+		gpa_avg += gpa_out;
+		
+		array_in[i] = piperPtr;
 	}
+	
+	gpa_avg /= numInput;
+	printf("\n\nAverage GPA: %f", gpa_avg);
+	
 	printf("\n\n=================================\n");
 }
-
