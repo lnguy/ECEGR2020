@@ -126,7 +126,7 @@ void readStudentRecords(Student** array_in)
 	fscanf(filePtr, "Number of students: %d", &numOut);
 	printf("\nNumber of students: %d", numOut);
 	
-	for(int i=0; i<numInput; i++)
+	for(int i=0; i<numOut; i++)
 	{
 		Student* piperPtr = (Student*) malloc(sizeof(Student));
 		
