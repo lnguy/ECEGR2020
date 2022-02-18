@@ -28,24 +28,30 @@ int main()
 	printf("\n\nEnter the number of students in the class: ");
 	scanf("%d", &numInput);
 	Student **arrayStudent = (Student**) malloc(numInput * sizeof(Student*));
-	for(int i = 0; i < numInput; i++)
+	if(arrayStudent != NULL)
 	{
-		arrayStudent[i] = createStudent();
+		for(int i = 0; i < numInput; i++)
+		{
+			arrayStudent[i] = createStudent();
+		}
+		sortGPA(arrayStudent);
+		filePtr = fopen("StudentRecords.txt", "w+");
+		fprintf(filePtr, "Number of students: %d ", numInput);
+		for(int i = 0; i < numInput; i++)
+		{
+			fprintf(filePtr, "\n\nStudent ID: %d", arrayStudent[i]->ID);
+			fprintf(filePtr, "\nStudent First Name: %s", arrayStudent[i]->firstName);
+			fprintf(filePtr, "\nStudent Last Name: %s", arrayStudent[i]->lastName);
+			fprintf(filePtr, "\nStudent GPA: %f", arrayStudent[i]->GPA);
+		}
+		free(arrayStudent);
 	}
-	sortGPA(arrayStudent);
-	filePtr = fopen("StudentRecords.txt", "w+");
-	fprintf(filePtr, "Number of students: %d ", numInput);
-	for(int i = 0; i < numInput; i++)
-	{
-		fprintf(filePtr, "\n\nStudent ID: %d", arrayStudent[i]->ID);
-		fprintf(filePtr, "\nStudent First Name: %s", arrayStudent[i]->firstName);
-		fprintf(filePtr, "\nStudent Last Name: %s", arrayStudent[i]->lastName);
-		fprintf(filePtr, "\nStudent GPA: %f", arrayStudent[i]->GPA);
-	}
-	free(arrayStudent);
 	Student** newStudentArray = (Student**) malloc(numInput * sizeof(Student*));
-	readStudentRecords(newStudentArray);
-	free(newStudentArray);
+	if(newStudentArray != NULL)
+	{
+		readStudentRecords(newStudentArray);
+		free(newStudentArray);
+	}
 }
 
 void ReverseArray()
@@ -65,27 +71,30 @@ void ReverseArray()
 Student* createStudent()
 {
 	Student* peterPtr = (Student*) malloc(sizeof(Student));
-	int id_in = 0;
-	char first_in[30] = "";
-	char last_in[30] = "";
-	float gpa_in = 0.0;
 	
-	printf("\nEnter the ID of the student: ");
-	scanf("%d", &id_in);
-	peterPtr->ID = id_in;
-	
-	printf("\nEnter the first name of the student: ");
-	scanf("%29s", first_in);
-	strcpy(peterPtr->firstName, first_in);
-	
-	printf("\nEnter the last name of the student: ");
-	scanf("%29s", last_in);
-	strcpy(peterPtr->lastName, last_in);
-	
-	printf("\nEnter the GPA of the student: ");
-	scanf("%f", &gpa_in);
-	peterPtr->GPA = gpa_in;
-	
+	if(peterPtr != NULL)
+	{
+		int id_in = 0;
+		char first_in[30] = "";
+		char last_in[30] = "";
+		float gpa_in = 0.0;
+		
+		printf("\nEnter the ID of the student: ");
+		scanf("%d", &id_in);
+		peterPtr->ID = id_in;
+		
+		printf("\nEnter the first name of the student: ");
+		scanf("%29s", first_in);
+		strcpy(peterPtr->firstName, first_in);
+		
+		printf("\nEnter the last name of the student: ");
+		scanf("%29s", last_in);
+		strcpy(peterPtr->lastName, last_in);
+		
+		printf("\nEnter the GPA of the student: ");
+		scanf("%f", &gpa_in);
+		peterPtr->GPA = gpa_in;
+	}
 	return peterPtr;
 }
 
@@ -121,25 +130,28 @@ void readStudentRecords(Student** array_in)
 	{
 		Student* piperPtr = (Student*) malloc(sizeof(Student));
 		
-		fscanf(filePtr, "\n\nStudent ID: %d", &id_out);
-		piperPtr->ID = id_out;
-		printf("\n\nStudent ID: %d", id_out);
-		
-		fscanf(filePtr, "\nStudent First Name: %s", first_out);
-		strcpy(piperPtr->firstName, first_out);
-		printf("\nStudent First Name: %s", first_out);
-		
-		fscanf(filePtr, "\nStudent Last Name: %s", last_out);
-		strcpy(piperPtr->lastName, last_out);
-		printf("\nStudent Last Name: %s", last_out);
-		
-		fscanf(filePtr, "\nStudent GPA: %f", &gpa_out);
-		piperPtr->GPA = gpa_out;
-		printf("\nStudent GPA: %f", gpa_out);
-		
-		gpa_avg += gpa_out;
-		
-		array_in[i] = piperPtr;
+		if(piperPtr != NULL)
+		{
+			fscanf(filePtr, "\n\nStudent ID: %d", &id_out);
+			piperPtr->ID = id_out;
+			printf("\n\nStudent ID: %d", id_out);
+			
+			fscanf(filePtr, "\nStudent First Name: %s", first_out);
+			strcpy(piperPtr->firstName, first_out);
+			printf("\nStudent First Name: %s", first_out);
+			
+			fscanf(filePtr, "\nStudent Last Name: %s", last_out);
+			strcpy(piperPtr->lastName, last_out);
+			printf("\nStudent Last Name: %s", last_out);
+			
+			fscanf(filePtr, "\nStudent GPA: %f", &gpa_out);
+			piperPtr->GPA = gpa_out;
+			printf("\nStudent GPA: %f", gpa_out);
+			
+			gpa_avg += gpa_out;
+			
+			array_in[i] = piperPtr;
+		}
 	}
 	
 	gpa_avg /= numInput;
