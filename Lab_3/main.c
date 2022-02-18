@@ -154,7 +154,7 @@ void readStudentRecords(Student** array_in)
 		}
 	}
 	
-	gpa_avg /= numInput;
+	gpa_avg /= numOut;
 	printf("\n\nAverage GPA: %f", gpa_avg);
 	
 	printf("\n\n=================================\n");
