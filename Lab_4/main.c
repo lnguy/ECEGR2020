@@ -53,7 +53,7 @@ void addStudentNode(Student* newStudent)
 void instertStudentNode(Student* newStudent)
 {
 	Student* node = firstStudent;
-	while(node != NULL)
+	while(node->next != NULL)
 	{
 		Student* nextNode = node->next;
 		if((node->GPA > newStudent->GPA) && (newStudent->GPA >= nextNode->GPA))
@@ -68,15 +68,11 @@ void instertStudentNode(Student* newStudent)
 			firstStudent = newStudent;
 			return;
 		}
-		else if((node->GPA >= newStudent->GPA) && (nextNode == NULL))
-		{
-			node->next = newStudent;
-			newStudent->next = NULL;
-			return;
-		}
 		node = node->next;
 	}
-	
+	node->next = newStudent;
+	newStudent->next = NULL;
+	return;
 	
 }
 
@@ -112,9 +108,8 @@ void freeList(void);
 void saveList(void);
 void removeStudent(int id_in);
 void updateStudent(int id_in);
-//void sortGPA(void);
 void menuDisplay(void);
-void updateStudentMenu(void);
+void updateStudentMenu(char first[30], char last[30]);
 
 int main()
 {
@@ -123,11 +118,12 @@ int main()
 	readStudentRecords();
 	do
 	{
-		int id_input = 0;
+		int id_input;
 		char first_input[30] = "";
 		char last_input[30] = "";
 		float gpa_input = 0.0;
 		int userID_in;
+		Student* idCheck = firstStudent;
 		
 		menuDisplay();
 		printf("\nWhat would you like to do? ");
@@ -140,6 +136,17 @@ int main()
 			case 2 :
 				printf("\nEnter the ID of the student: ");
 				scanf("%d", &id_input);
+				while(idCheck != NULL)
+				{
+					if(id_input == idCheck->ID)
+					{
+						printf("\nEntered ID is currently used by and existing student.");
+						idCheck = firstStudent;
+						printf("\nEnter the ID of the student: ");
+						scanf("%d", &id_input);
+					}
+					idCheck = idCheck->next;
+				}
 				
 				printf("\nEnter the first name of the student: ");
 				scanf("%29s", first_input);
@@ -184,14 +191,12 @@ int main()
 
 void readStudentRecords()
 {
-	//printf("=========STUDENT RECORDS=========\n");
 	char first_out[30], last_out[30];
 	int numOut, id_out;
 	float gpa_out;
 	
 	filePtr = fopen("StudentRecords.txt", "r");
 	fscanf(filePtr, "Number of students: %d", &numOut);
-	//printf("\nNumber of students: %d", numOut);
 	
 	for(int i=0; i<numOut; i++)
 	{
@@ -258,27 +263,6 @@ void saveList()
 	fclose(filePtr);
 }
 
-/*void sortGPA()
-{
-	Student* node = firstStudent;
-	while(node != NULL)
-	{
-		Student* nextNode = node->next;
-		Student* beforeNextNode = nextNode;
-		while(nextNode != NULL)
-		{
-			if(node->GPA > nextNode->GPA)
-			{
-				Student* temp = node;
-				node->next = nextNode->next;
-				nextNode->next = temp->next
-			}
-			beforeNextNode = nextNode;
-			nextNode = nextNode->next;
-		}
-	}
-}*/
-
 void removeStudent(int id_in)
 {
 	Student* node = firstStudent;
@@ -312,27 +296,37 @@ void updateStudent(int id_in)
 	Student* prevNode = node;
 	int check = 0;
 	int user_input = 0;
-	updateStudentMenu();
 	while(node != NULL)
 	{
 		if(id_in == node->ID)
 		{
 			do
 			{
-				updateStudentMenu();
+				updateStudentMenu(node->firstName, node->lastName);
 				scanf("%d", &user_input);
 				
 				int new_id, old_id;
 				char new_first[30], old_first[30];
 				char new_last[30], old_last[30];
 				float new_gpa, old_gpa;
-				//Student* temp = node;
+				Student* idCheck = firstStudent;
 				
 				switch(user_input)
 				{
 					case 1 :
 						printf("\nEnter the new ID: ");
 						scanf("%d", &new_id);
+						while(idCheck != NULL)
+						{
+							if(new_id == idCheck->ID)
+							{
+								printf("\nEntered ID is currently used by and existing student.");
+								idCheck = firstStudent;
+								printf("\nEnter the ID of the student: ");
+								scanf("%d", &new_id);
+							}
+							idCheck = idCheck->next;
+						}
 						old_id = node->ID;
 						node->ID = new_id;
 						printf("\n%d was sucessfully updated to %d", old_id, new_id);
@@ -343,7 +337,6 @@ void updateStudent(int id_in)
 						strcpy(old_first, node->firstName);
 						strcpy(node->firstName, new_first);
 						printf("\n%s was sucessfully updated to %s", old_first, new_first);
-						//updateStudentMenu();
 						break;
 					case 3 :
 						printf("\nEnter the new last name: ");
@@ -351,26 +344,36 @@ void updateStudent(int id_in)
 						strcpy(old_last, node->lastName);
 						strcpy(node->lastName, new_last);
 						printf("\n%s was sucessfully updated to %s", old_last, new_last);
-						//updateStudentMenu();
 						break;
 					case 4 :
 						printf("\nEnter the new GPA: ");
 						scanf("%f", &new_gpa);
+						while((new_gpa > 4.0) || (new_gpa < 1.0))
+						{
+							printf("\nPlease enter a GPA in the range of 4.0 and 1.0.");
+							printf("\nEnter the GPA of the student: ");
+							scanf("%f", &new_gpa);
+						}
 						old_gpa = node->GPA;
 						node->GPA = new_gpa;
-						prevNode->next = node->next;
-						instertStudentNode(node);
+						if(prevNode == node)
+						{
+							node->next = NULL;
+							instertStudentNode(node);
+						}
+						else
+						{
+							prevNode->next = node->next;
+							instertStudentNode(node);
+						}
 						printf("\n%f was sucessfully updated to %f", old_gpa, new_gpa);
-						//updateStudentMenu();
 						break;
 					
 					case 5 :
-						menuDisplay();
 						break;
 					
 					default :
 						printf("\nInvalid input\n");
-						//updateStudentMenu();
 				}
 			} while(user_input != 5);
 			return;
@@ -399,10 +402,10 @@ void menuDisplay()
 	printf("\n\n");
 }
 
-void updateStudentMenu()
+void updateStudentMenu(char first[30], char last[30])
 {
 	printf("\n====================STUDENT MENU====================");
-	printf("\nWhat would you like to update about this student?");
+	printf("\nWhat would you like to update about %s %s?", first, last);
 	printf("\n\n[1] ID");
 	printf("\n[2] First Name");
 	printf("\n[3] Last Name");
