@@ -16,9 +16,9 @@ typedef struct student // struct student being defined and type defined.
 Student* firstStudent = NULL; // Creating the first student pointer to be used in a linked list, because the list starts empty the pointer points to NULL.
 
 ////////////////////////////////////////////////////////////////////
-//																  //
-//						   Node Functions						  //
-//																  //
+//								  //
+//			   Node Functions			  //
+//								  //
 ////////////////////////////////////////////////////////////////////
 
 /*
@@ -145,9 +145,9 @@ void menuDisplay(void); // Displays the default menu.
 void updateStudentMenu(char first[30], char last[30]); // Displays the menu for the specific student to have their attributes updated.
 
 ////////////////////////////////////////////////////////////////////
-//																  //
-//						  Main Function						      //
-//																  //
+//								  //
+//			   Main Function		          //
+//								  //
 ////////////////////////////////////////////////////////////////////
 
 int main()
@@ -236,9 +236,9 @@ int main()
 }
 
 ////////////////////////////////////////////////////////////////////
-//																  //
-//					 Specfic Student Functions					  //
-//																  //
+//								  //
+//		      Specfic Student Functions			  //
+//								  //
 ////////////////////////////////////////////////////////////////////
 
 void readStudentRecords()
