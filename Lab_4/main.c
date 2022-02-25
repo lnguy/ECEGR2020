@@ -57,11 +57,11 @@ void addStudentNode(Student* newStudent) // Adds a student input to the end of t
 	}
 	
 	while(currentStudent->next != NULL) // If there's a linked list, then we iterate through the list.
-	{									// We check to see if our current pointer is pointing to NULL so we know when we have arrived at the end of the linked list.
+	{				    // We check to see if our current pointer is pointing to NULL so we know when we have arrived at the end of the linked list.
 		currentStudent = currentStudent->next; // This is how to iterate trhough a linked list, it's the same idea as i++ for a for loop;
 	}
 	currentStudent->next = newStudent; // After iterating through the list to arrive at the tail, we set the current tail
-	newStudent->next = NULL;		   // to the student input and set the new student pointer to NULL, defining it as the new tail.
+	newStudent->next = NULL;	   // to the student input and set the new student pointer to NULL, defining it as the new tail.
 }
 
 void instertStudentNode(Student* newStudent) // Inserts a student into the linked list. NOTE: This is where the list sorts by GPA as well. 
@@ -73,14 +73,14 @@ void instertStudentNode(Student* newStudent) // Inserts a student into the linke
 		Student* nextNode = node->next; // Creates another student pointer to keep track of the student that comes after the current student (hence the name nextNode).
 		
 		if((node->GPA > newStudent->GPA) && (newStudent->GPA >= nextNode->GPA)) // This if statement compares to see if the current student's GPA is greater than the new student GPA,
-		{																		// and if the next student's GPA is less than or equal to the new student GPA.
+		{									// and if the next student's GPA is less than or equal to the new student GPA.
 			newStudent->next = node->next; // Takes the student input and links it to the next node in the list.
 			node->next = newStudent; // Links the current student to the student input.
 			return; // Leaves the function.
 		}
 		
 		else if(node->GPA <= newStudent->GPA) // If the first check fails, then this check is to see if the student input GPA is the greatest GPA.
-		{									  // NOTE: This should only happen to the head node in the linked list.
+		{				      // NOTE: This should only happen to the head node in the linked list.
 			newStudent->next = node; // Links the new student to the current node (which should be the head node).
 			firstStudent = newStudent; // Sets the new student as the head node (aka first student in the linked list).
 			return; // Leaves the function.
@@ -116,7 +116,7 @@ void deleteStudentNode(Student* delStudent) // Deletes a student given a student
 	if(currentStudent != NULL) // Checks to see if we are still in the linked list.
 	{
 		prevSudent->next = currentStudent->next; // This sucessfully unlinks our desired node from the linked list by having the 
-	}											 // previous node link skip the currnet node and link to the next one.
+	}						 // previous node link skip the currnet node and link to the next one.
 	
 	free(delStudent); // Deletes the desired student and frees the its memory.
 }
