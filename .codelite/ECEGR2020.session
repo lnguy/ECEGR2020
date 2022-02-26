@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Session Name="C:\Users\Ly\ECEGR2020\ECEGR2020.workspace">
+  <int Value="3" Name="m_selectedTab"/>
+  <wxString Value="C:\Users\Ly\ECEGR2020\ECEGR2020.workspace" Name="m_workspaceName"/>
+  <TabInfoArray Name="TabInfoArray">
+    <TabInfo>
+      <wxString Value="C:\Users\Ly\ECEGR2020\Lab_1\main.c" Name="FileName"/>
+      <int Value="213" Name="FirstVisibleLine"/>
+      <int Value="232" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\Users\Ly\ECEGR2020\Lab_2\main.c" Name="FileName"/>
+      <int Value="150" Name="FirstVisibleLine"/>
+      <int Value="153" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\Users\Ly\ECEGR2020\Lab_0\main.c" Name="FileName"/>
+      <int Value="6" Name="FirstVisibleLine"/>
+      <int Value="7" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\Users\Ly\ECEGR2020\Lab_4\main.c" Name="FileName"/>
+      <int Value="285" Name="FirstVisibleLine"/>
+      <int Value="477" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds">
+        <IntVectorItem Value="244"/>
+        <IntVectorItem Value="273"/>
+        <IntVectorItem Value="291"/>
+        <IntVectorItem Value="304"/>
+      </IntVector>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\Users\Ly\ECEGR2020\Lab_3\mainD.c" Name="FileName"/>
+      <int Value="84" Name="FirstVisibleLine"/>
+      <int Value="87" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\Users\Ly\ECEGR2020\Lab_3\main.c" Name="FileName"/>
+      <int Value="3" Name="FirstVisibleLine"/>
+      <int Value="33" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+  </TabInfoArray>
+  <SerializedObject Name="m_breakpoints">
+    <long Value="0" Name="Count"/>
+  </SerializedObject>
+  <wxString Value="*.c;*.cpp;*.cxx;*.cc;*.h;*.hpp;*.inc;*.mm;*.m;*.xrc;*.plist;*.txt" Name="m_findInFilesMask"/>
+</Session>

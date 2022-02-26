@@ -1,0 +1,72 @@
+filePtr	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^FILE *filePtr; \/\/ File pointer to use for reading and writing to a file.$/;"	variable	line:5
+student	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^typedef struct student \/\/ struct student being defined and type defined.$/;"	struct	line:7
+ID	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^    int ID;$/;"	member	line:9	struct:student	access:public
+firstName	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^    char firstName[30];$/;"	member	line:10	struct:student	access:public
+lastName	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^    char lastName[30];$/;"	member	line:11	struct:student	access:public
+GPA	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^    float GPA;$/;"	member	line:12	struct:student	access:public
+next	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^	struct student* next; \/\/ struct student pointer to point at the next pointer in a list (used for linked lists).$/;"	member	line:13	struct:student	typeref:struct:student::student	access:public
+Student	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^typedef struct student \/\/ struct student being defined and type defined. {     int ID;     char firstName[30];     char lastName[30];     float GPA; 	struct student* next; \/\/ struct student pointer to point at the next pointer in a list (used for linked lists). } Student; \/\/ struct student will have be called when type Student is used. $/;"	typedef	line:14	typeref:struct:student
+firstStudent	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^Student* firstStudent = NULL; \/\/ Creating the first student pointer to be used in a linked list, because the list starts empty the pointer points to NULL.$/;"	variable	line:16
+createStudentNode	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^Student* createStudentNode(int id_in, char first_in[30], char last_in[30], float gpa_in) \/\/ Creates a student node with inputs for each part of the original student struct.$/;"	function	line:33	signature:(int id_in, char first_in[30], char last_in[30], float gpa_in)	returns:Student 
+newStudent	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^	Student* newStudent = (Student*) malloc(sizeof(Student)); \/\/ Allocates memory for a new student pointer to be made.$/;"	local	line:35	type:Student
+addStudentNode	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^void addStudentNode(Student* newStudent) \/\/ Adds a student input to the end of the linked list.$/;"	function	line:49	signature:(Student* newStudent)	returns:void 
+currentStudent	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^	Student* currentStudent = firstStudent; \/\/ Creates a new student pointer to keep track of the current student. Sets the pointer at the start of the linked list.$/;"	local	line:51	type:Student
+instertStudentNode	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^void instertStudentNode(Student* newStudent) \/\/ Inserts a student into the linked list. NOTE: This is where the list sorts by GPA as well. $/;"	function	line:67	signature:(Student* newStudent)	returns:void 
+node	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^	Student* node = firstStudent; \/\/ Creates a new student pointer to keep track of the current student. Sets the pointer at the start of the linked list.$/;"	local	line:69	type:Student
+nextNode	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^		Student* nextNode = node->next; \/\/ Creates another student pointer to keep track of the student that comes after the current student (hence the name nextNode).$/;"	local	line:73	type:Student
+deleteStudentNode	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^void deleteStudentNode(Student* delStudent) \/\/ Deletes a student given a student input to delete.$/;"	function	line:98	signature:(Student* delStudent)	returns:void 
+currentStudent	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^	Student* currentStudent = firstStudent; \/\/ Creates a new student pointer to keep track of the current student. Sets the pointer at the start of the linked list.$/;"	local	line:100	type:Student
+prevSudent	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^	Student* prevSudent = NULL; \/\/ Creates a new student pointer to keep track of the previous student. This will be delayed in the iteration when traversing the list.$/;"	local	line:101	type:Student
+readStudentRecords	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^void readStudentRecords(void); \/\/ Reads the StudentRecords.txt file and writes it into a linked list.$/;"	prototype	line:129	signature:(void)	returns:void 
+readList	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^void readList(void); \/\/ Iterates through the linked list and prints out all the students in the linked list.$/;"	prototype	line:133	signature:(void)	returns:void 
+freeList	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^void freeList(void); \/\/ Iterates through the linked list and deletes all the students in the linked list, thus freeing the memory.$/;"	prototype	line:134	signature:(void)	returns:void 
+saveList	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^void saveList(void); \/\/ Iterates through the linked list and writes all the student details in the same format into the StudentRecords.txt file.$/;"	prototype	line:135	signature:(void)	returns:void 
+removeStudent	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^void removeStudent(int id_in); \/\/ Removes a student from the linked list by searching for their specific ID.$/;"	prototype	line:139	signature:(int id_in)	returns:void 
+updateStudent	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^void updateStudent(int id_in); \/\/ Updates a function based on the user input for any attribute of the student based on their specific ID.$/;"	prototype	line:140	signature:(int id_in)	returns:void 
+menuDisplay	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^void menuDisplay(void); \/\/ Displays the default menu.$/;"	prototype	line:144	signature:(void)	returns:void 
+updateStudentMenu	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^void updateStudentMenu(char first[30], char last[30]); \/\/ Displays the menu for the specific student to have their attributes updated.$/;"	prototype	line:145	signature:(char first[30], char last[30])	returns:void 
+main	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^int main()$/;"	function	line:153	signature:()	returns:int 
+user_in	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^	int user_in; \/\/ Declares a new variable to scan for user input later.$/;"	local	line:155
+id_input	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^		int id_input;$/;"	local	line:163
+first_input	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^		char first_input[30] = "";$/;"	local	line:164
+last_input	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^		char last_input[30] = "";$/;"	local	line:165
+gpa_input	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^		float gpa_input = 0.0;$/;"	local	line:166
+userID_in	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^		int userID_in; \/\/ Variable to scan for user input later for menu options 3 and 4.$/;"	local	line:167
+idCheck	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^		Student* idCheck = firstStudent; \/\/ Variable to use as a check for later.$/;"	local	line:168	type:Student
+peterPtr	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^				Student* peterPtr = createStudentNode(id_input, first_input, last_input, gpa_input); \/\/ Takes all the scanned inputs and creates a new student pointer from it.$/;"	local	line:210	type:Student
+readStudentRecords	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^void readStudentRecords() \/\/ Reads the StudentRecords.txt file and writes it into a linked list.$/;"	function	line:244	signature:()	returns:void 
+first_out	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^	char first_out[30], last_out[30];$/;"	local	line:249
+last_out	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^	char first_out[30], last_out[30];$/;"	local	line:249
+numOut	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^	int numOut, id_out;$/;"	local	line:250
+id_out	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^	int numOut, id_out;$/;"	local	line:250
+gpa_out	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^	float gpa_out;$/;"	local	line:251
+piperPtr	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^		Student* piperPtr = createStudentNode(id_out, first_out, last_out, gpa_out); \/\/ Create a node to be placed in the linked list.$/;"	local	line:266	type:Student
+readList	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^void readList() \/\/ Iterates through the linked list and prints out all the students in the linked list.$/;"	function	line:273	signature:()	returns:void 
+node	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^	Student* node = firstStudent; \/\/ Creates a new student pointer to keep track of the current node (aka student). Sets the pointer at the start of the linked list.$/;"	local	line:275	type:Student
+freeList	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^void freeList() \/\/ Iterates through the linked list and deletes all the students in the linked list, thus freeing the memory.$/;"	function	line:291	signature:()	returns:void 
+node	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^	Student* node = firstStudent; \/\/ Creates a new student pointer to keep track of the current node (aka student). Sets the pointer at the start of the linked list.$/;"	local	line:293	type:Student
+nextNode	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^	Student* nextNode = firstStudent->next; \/\/ Creates a new student pointer to keep track of the next node (aka student). Sets the pointer at the second node of the linked list.$/;"	local	line:294	type:Student
+saveList	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^void saveList() \/\/ Iterates through the linked list and writes all the student details in the same format into the StudentRecords.txt file.$/;"	function	line:304	signature:()	returns:void 
+node	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^	Student* node = firstStudent; \/\/ Creates a new student pointer to keep track of the current node (aka student). Sets the pointer at the start of the linked list.$/;"	local	line:307	type:Student
+studentCount	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^	int studentCount = 0; \/\/ New variable to count the total students in the linked list.$/;"	local	line:308
+removeStudent	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^void removeStudent(int id_in) \/\/ Removes a student from the linked list by searching for their specific ID.$/;"	function	line:337	signature:(int id_in)	returns:void 
+node	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^	Student* node = firstStudent; \/\/ Creates a new student pointer to keep track of the current node (aka student). Sets the pointer at the start of the linked list.$/;"	local	line:339	type:Student
+check	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^	int check = 0; \/\/ Initialzed a variable to check if the ID was found or not. 0 if not found, 1 if found.$/;"	local	line:340
+first	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^			char first[30];$/;"	local	line:345
+last	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^			char last[30];$/;"	local	line:346
+updateStudent	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^void updateStudent(int id_in) \/\/ Updates a function based on the user input for any attribute of the student based on their specific ID.$/;"	function	line:364	signature:(int id_in)	returns:void 
+node	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^	Student* node = firstStudent; \/\/ Creates a new student pointer to keep track of the current node (aka student). Sets the pointer at the start of the linked list.$/;"	local	line:366	type:Student
+prevNode	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^	Student* prevNode = node; \/\/ Creates a new student pointer to keep track of the previous node (aka student). Sets the pointer at the start of the linked list.$/;"	local	line:367	type:Student
+check	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^	int check = 0; \/\/ Initialzed a variable to check if the ID was found or not. 0 if not found, 1 if found.$/;"	local	line:368
+user_input	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^	int user_input = 0; \/\/ Declares a new variable to scan for user input later.$/;"	local	line:369
+new_id	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^				int new_id, old_id;$/;"	local	line:381
+old_id	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^				int new_id, old_id;$/;"	local	line:381
+new_first	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^				char new_first[30], old_first[30];$/;"	local	line:382
+old_first	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^				char new_first[30], old_first[30];$/;"	local	line:382
+new_last	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^				char new_last[30], old_last[30];$/;"	local	line:383
+old_last	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^				char new_last[30], old_last[30];$/;"	local	line:383
+new_gpa	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^				float new_gpa, old_gpa;$/;"	local	line:384
+old_gpa	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^				float new_gpa, old_gpa;$/;"	local	line:384
+idCheck	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^				Student* idCheck = firstStudent;$/;"	local	line:385	type:Student
+menuDisplay	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^void menuDisplay() \/\/ Displays the default menu.$/;"	function	line:464	signature:()	returns:void 
+updateStudentMenu	C:\Users\Ly\ECEGR2020\Lab_4\main.c	/^void updateStudentMenu(char first[30], char last[30]) \/\/ Displays the menu for the specific student to have their attributes updated.$/;"	function	line:478	signature:(char first[30], char last[30])	returns:void 

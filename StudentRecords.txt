@@ -1,14 +1,19 @@
-Number of students: 5 
+Number of students: 7 
 
-Student ID: 5864
-Student First Name: Ryan
-Student Last Name: Walmart
+Student ID: 9465
+Student First Name: Bug
+Student Last Name: Light
 Student GPA: 4.000000
 
 Student ID: 2345
 Student First Name: Ken
 Student Last Name: Ta
 Student GPA: 3.880000
+
+Student ID: 3612
+Student First Name: Joe
+Student Last Name: Blow
+Student GPA: 3.500000
 
 Student ID: 6132
 Student First Name: Delane
@@ -24,3 +29,8 @@ Student ID: 9469
 Student First Name: Shawn
 Student Last Name: Bean-Marr
 Student GPA: 2.100000
+
+Student ID: 5864
+Student First Name: Ryan
+Student Last Name: Walmart
+Student GPA: 1.330000

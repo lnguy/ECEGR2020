@@ -1,0 +1,26 @@
+Number of students: 5 
+
+Student ID: 0
+Student First Name: 
+Student Last Name: 
+Student GPA: 0.000000
+
+Student ID: 0
+Student First Name: 
+Student Last Name: 
+Student GPA: 0.000000
+
+Student ID: 0
+Student First Name: 
+Student Last Name: 
+Student GPA: 0.000000
+
+Student ID: 0
+Student First Name: 
+Student Last Name: 
+Student GPA: 0.000000
+
+Student ID: 0
+Student First Name: 
+Student Last Name: 
+Student GPA: 0.000000

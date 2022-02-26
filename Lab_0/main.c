@@ -1,14 +1,41 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-int main(int argc, char **argv)
+typedef struct node
 {
-	printf("hello world\n");
-	printf("Now live on GitHub!\n");
+    int data;
+    struct node *next;
+}Node;
+
+
+void addLast(struct node **head, int val)
+{
+    //create a new node
+    struct node *newNode = malloc(sizeof(struct node));
+    newNode->data = val;
+    newNode->next     = NULL;
+
+    //if head is NULL, it is an empty list
+    if(*head == NULL)
+         *head = newNode;
+    //Otherwise, find the last node and add the newNode
+    else
+    {
+        struct node *lastNode = *head;
+
+        //last node's next address will be NULL.
+        while(lastNode->next != NULL)
+        {
+            lastNode = lastNode->next;
+        }
+
+        //add the newNode at the end of the linked list
+        lastNode->next = newNode;
+    }
+
+}
+
+int main()
+{
 	
-	for(int i=0;i<argc;i++)
-	{
-		printf("%d - %s\n", i, argv[i]);
-		
-	}
-	return 0;
 }

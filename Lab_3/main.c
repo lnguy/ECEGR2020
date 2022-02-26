@@ -23,7 +23,7 @@ void readStudentRecords(Student** array_in);
 int main()
 {
 	
-	ReverseArray();
+	/*ReverseArray();
 	
 	printf("\n\nEnter the number of students in the class: ");
 	scanf("%d", &numInput);
@@ -45,7 +45,7 @@ int main()
 			fprintf(filePtr, "\nStudent GPA: %f", arrayStudent[i]->GPA);
 		}
 		free(arrayStudent);
-	}
+	}*/
 	Student** newStudentArray = (Student**) malloc(numInput * sizeof(Student*));
 	if(newStudentArray != NULL)
 	{
