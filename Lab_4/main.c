@@ -265,7 +265,7 @@ void readStudentRecords() // Reads the StudentRecords.txt file and writes it int
 		
 		Student* piperPtr = createStudentNode(id_out, first_out, last_out, gpa_out); // Create a node to be placed in the linked list.
 		addStudentNode(piperPtr); // Construct a linked list by placing the previously created node on to the end of the list.
-								  // NOTE: This does not use the insert function because the file shold alrady be formatted in GPA descending order.
+					  // NOTE: This does not use the insert function because the file shold alrady be formatted in GPA descending order.
 	}
 	printf("StudentRecords.txt successfully scanned\n"); // Let user know the function worked.
 }
@@ -296,7 +296,7 @@ void freeList() // Iterates through the linked list and deletes all the students
 	{
 		deleteStudentNode(node); // Free the current node.
 		node = nextNode; // Iterate through, i++. 
-						 // NOTE: Using another pointer instead of using node = node->next; because node is now equal to NULL.
+				 // NOTE: Using another pointer instead of using node = node->next; because node is now equal to NULL.
 		nextNode = nextNode->next; // Iterate to the next node.
 	}
 }
