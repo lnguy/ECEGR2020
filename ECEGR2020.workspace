@@ -4,7 +4,6 @@
   <Project Name="Lab_1" Path="Lab_1/Lab_1.project" Active="No"/>
   <Project Name="Lab_2" Path="Lab_2/Lab_2.project" Active="No"/>
   <Project Name="Lab_3" Path="Lab_3/Lab_3.project" Active="No"/>
-  <Project Name="Lab_3_DE" Path="Lab_3_DE/Lab_3_DE.project" Active="No"/>
   <Project Name="Lab_4" Path="Lab_4/Lab_4.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug">

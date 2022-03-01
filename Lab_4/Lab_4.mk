@@ -14,7 +14,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=Ly
-Date                   :=25/02/2022
+Date                   :=28/02/2022
 CodeLitePath           :="C:/Program Files/CodeLite"
 LinkerName             :=C:/Tools/mingw64/bin/g++.exe
 SharedObjectLinkerName :=C:/Tools/mingw64/bin/g++.exe -shared -fPIC
@@ -62,7 +62,7 @@ AS       := C:/Tools/mingw64/bin/as.exe
 ## User defined environment variables
 ##
 CodeLiteDir:=C:\Program Files\CodeLite
-Objects0=../build-$(ConfigurationName)/Lab_4/main.c$(ObjectSuffix) 
+Objects0=../build-$(ConfigurationName)/Lab_4/QueueArrayOriginal.c$(ObjectSuffix) 
 
 
 
@@ -93,13 +93,13 @@ PreBuild:
 ##
 ## Objects
 ##
-../build-$(ConfigurationName)/Lab_4/main.c$(ObjectSuffix): main.c ../build-$(ConfigurationName)/Lab_4/main.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "C:/Users/Ly/ECEGR2020/Lab_4/main.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.c$(ObjectSuffix) $(IncludePath)
-../build-$(ConfigurationName)/Lab_4/main.c$(DependSuffix): main.c
-	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT../build-$(ConfigurationName)/Lab_4/main.c$(ObjectSuffix) -MF../build-$(ConfigurationName)/Lab_4/main.c$(DependSuffix) -MM main.c
+../build-$(ConfigurationName)/Lab_4/QueueArrayOriginal.c$(ObjectSuffix): QueueArrayOriginal.c ../build-$(ConfigurationName)/Lab_4/QueueArrayOriginal.c$(DependSuffix)
+	$(CC) $(SourceSwitch) "C:/Users/Ly/ECEGR2020/Lab_4/QueueArrayOriginal.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/QueueArrayOriginal.c$(ObjectSuffix) $(IncludePath)
+../build-$(ConfigurationName)/Lab_4/QueueArrayOriginal.c$(DependSuffix): QueueArrayOriginal.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT../build-$(ConfigurationName)/Lab_4/QueueArrayOriginal.c$(ObjectSuffix) -MF../build-$(ConfigurationName)/Lab_4/QueueArrayOriginal.c$(DependSuffix) -MM QueueArrayOriginal.c
 
-../build-$(ConfigurationName)/Lab_4/main.c$(PreprocessSuffix): main.c
-	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) ../build-$(ConfigurationName)/Lab_4/main.c$(PreprocessSuffix) main.c
+../build-$(ConfigurationName)/Lab_4/QueueArrayOriginal.c$(PreprocessSuffix): QueueArrayOriginal.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) ../build-$(ConfigurationName)/Lab_4/QueueArrayOriginal.c$(PreprocessSuffix) QueueArrayOriginal.c
 
 
 -include ../build-$(ConfigurationName)/Lab_4//*$(DependSuffix)

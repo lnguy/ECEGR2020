@@ -93,6 +93,10 @@
     </Configuration>
   </Settings>
   <VirtualDirectory Name="src">
-    <File Name="main.c"/>
+    <File Name="StackArrayOriginal.c" ExcludeProjConfig="Debug;"/>
+    <File Name="QueueArrayOriginal.c" ExcludeProjConfig="Debug;"/>
+    <File Name="QueueArray.c" ExcludeProjConfig="Debug;"/>
+    <File Name="StackArray.c" ExcludeProjConfig="Debug;"/>
+    <File Name="main.c" ExcludeProjConfig="Debug;"/>
   </VirtualDirectory>
 </CodeLite_Project>
