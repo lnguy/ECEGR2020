@@ -57,11 +57,13 @@ public:
 	}
 	void setFirstName(char *first_in)
 	{
+		free(firstName);
 		firstName = (char*) malloc(sizeof(strlen(first_in)+1));
 		strcpy(firstName, first_in);
 	}
 	void setLastName(char *last_in)
 	{
+		free(lastName);
 		lastName = (char*) malloc(sizeof(strlen(last_in)+1));
 		strcpy(lastName, last_in);
 	}
@@ -127,11 +129,13 @@ public:
 	}
 	void setFirstName(char *first_in)
 	{
+		free(firstName);
 		firstName = (char*) malloc(sizeof(strlen(first_in)+1));
 		strcpy(firstName, first_in);
 	}
 	void setLastName(char *last_in)
 	{
+		free(lastName);
 		lastName = (char*) malloc(sizeof(strlen(last_in)+1));
 		strcpy(lastName, last_in);
 	}
@@ -199,11 +203,13 @@ public:
 	}
 	void setFirstName(char *first_in)
 	{
+		free(firstName);
 		firstName = (char*) malloc(sizeof(strlen(first_in)+1));
 		strcpy(firstName, first_in);
 	}
 	void setLastName(char *last_in)
 	{
+		free(lastName);
 		lastName = (char*) malloc(sizeof(strlen(last_in)+1));
 		strcpy(lastName, last_in);
 	}
@@ -241,13 +247,11 @@ Student :: Student(Student &init)
 	GPA = init.GPA;
 	if(init.firstName)
 	{
-		firstName = (char*) malloc(sizeof(strlen(init.firstName)+1));
-		strcpy(firstName, init.firstName);
+		setFirstName(init.firstName);
 	}
 	if(init.lastName)
 	{
-		lastName = (char*) malloc(sizeof(strlen(init.lastName)+1));
-		strcpy(lastName, init.lastName);
+		setLastName(init.lastName);
 	}
 	printf("Student Copy Constructor called.\n");
 }
