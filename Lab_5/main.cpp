@@ -21,6 +21,8 @@ public:
 	Student& operator=(Student const &s)
 	{
 		this->ID = s.ID;
+		this->firstName = NULL;
+		this->lastName = NULL;
 		setFirstName(s.firstName);
 		setLastName(s.lastName);
 		this->GPA = s.GPA;
@@ -57,15 +59,35 @@ public:
 	}
 	void setFirstName(char *first_in)
 	{
-		free(firstName);
-		firstName = (char*) malloc(sizeof(strlen(first_in)+1));
-		strcpy(firstName, first_in);
+		if(firstName == NULL)
+		{
+			firstName = (char*) malloc(strlen(first_in)+1);
+			strcpy(firstName, first_in);
+			return;
+		}
+		else
+		{
+			free(firstName);
+			firstName = (char*) malloc(strlen(first_in)+1);
+			strcpy(firstName, first_in);
+			return;
+		}
 	}
 	void setLastName(char *last_in)
 	{
-		free(lastName);
-		lastName = (char*) malloc(sizeof(strlen(last_in)+1));
-		strcpy(lastName, last_in);
+		if(lastName == NULL)
+		{
+			lastName = (char*) malloc(strlen(last_in)+1);
+			strcpy(lastName, last_in);
+			return;
+		}
+		else
+		{
+			free(lastName);
+			lastName = (char*) malloc(strlen(last_in)+1);
+			strcpy(lastName, last_in);
+			return;
+		}
 	}
 };
 
@@ -222,10 +244,8 @@ public:
 Student :: Student()
 {
 	this->ID = 9999;
-	this->firstName = (char*) malloc(sizeof(strlen((char*) "<unknown>")+1));
-	strcpy(this->firstName, (char*) "<unknown>");
-	this->lastName = (char*) malloc(sizeof(strlen((char*) "<unknown>")+1));
-	strcpy(this->lastName, (char*) "<unknown>");
+	this->firstName = NULL;
+	this->lastName = NULL;
 	this->GPA = 0.0;
 	printf("Student Default Constructor called.\n");
 }
@@ -233,9 +253,9 @@ Student :: Student()
 Student :: Student(int id_in, char* first_in, char* last_in, float gpa_in)
 {
 	this->ID = id_in;
-	this->firstName = (char*) malloc(sizeof(strlen(first_in)+1));
+	this->firstName = (char*) malloc(strlen(first_in)+1);
 	strcpy(this->firstName, first_in);
-	this->lastName = (char*) malloc(sizeof(strlen(last_in)+1));
+	this->lastName = (char*) malloc(strlen(last_in)+1);
 	strcpy(this->lastName, last_in);
 	this->GPA = gpa_in;
 	printf("Student Constructor called for %s %s.\n", firstName, lastName);
@@ -245,6 +265,8 @@ Student :: Student(Student &init)
 {
 	ID = init.ID;
 	GPA = init.GPA;
+	firstName = NULL;
+	lastName = NULL;
 	if(init.firstName)
 	{
 		setFirstName(init.firstName);
@@ -408,4 +430,5 @@ int main() // program doesn't leak memory if destructors at the end are called.
 	student2.setFirstName((char*) "Ten");
 	student2.setLastName((char*) "Zera");
 	printf("%s %s\n", student2.getFirstName(), student2.getLastName());
+	return 0;
 }

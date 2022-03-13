@@ -139,6 +139,7 @@ Student :: Student(Student &init)
 	{
 		setLastName(init.lastName);
 	}
+	next = init.next;
 	//printf("Student Copy Constructor called.\n");
 }
 
