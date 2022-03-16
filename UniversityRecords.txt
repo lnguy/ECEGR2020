@@ -1,0 +1,65 @@
+Number of people: 9
+
+Professor
+ID: 96532
+First Name: Emma
+Last Name: Haskin
+Salary: 361524
+Tenured: 0
+Department: English
+
+Professor
+ID: 65132
+First Name: Russel
+Last Name: Berrett
+Salary: 651321
+Tenured: 0
+Department: English
+
+Professor
+ID: 61534
+First Name: Rory
+Last Name: Retzlaff
+Salary: 6.18654e+06
+Tenured: 1
+Department: Physics
+
+Student
+ID: 56123
+First Name: Jason
+Last Name: Li
+GPA: 3.76
+
+Professor
+ID: 52135
+First Name: N0thing
+Last Name: Gilbert
+Salary: 365215
+Tenured: 0
+Department: Math
+
+Professor
+ID: 51354
+First Name: David
+Last Name: Menenberg
+Salary: 5e+06
+Tenured: 1
+Department: English
+
+Student
+ID: 8465
+First Name: Simran
+Last Name: Tandon
+GPA: 3.98
+
+Employee
+ID: 5612
+First Name: Klaus
+Last Name: Ford
+Salary: 61215
+
+Student
+ID: 1234
+First Name: Matthieu
+Last Name: Le
+GPA: 4

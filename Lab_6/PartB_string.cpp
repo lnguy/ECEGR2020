@@ -201,19 +201,17 @@ int main()
 				
 			case 4 : // 4) Update Student
 			{
-				
-			}
 				printf("\nEnter the ID of the student you wish to update: "); // Prompts the user to enter an input.
 				cin >> userID_in; // Scans the input into the userID_in variable that was declared at the beginning of the do-while loop.
 				updateStudent(userID_in); // Takes the scanned userID_in and updates the student based on the user input for any attribute of the student based on userID_in.
 				break; // Leave the switch-case.
+			}
 			
 			case 5 : // 5) Quit
 			{
-				
-			}
 				printf("\nExiting Student Program..."); // Let the user know the program is closing.
 				break; // Leave the switch-case.
+			}
 			
 			default : // If there is an input that isn't any of the above listed cases.
 				printf("\nInvalid input\n"); 
