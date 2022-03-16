@@ -924,13 +924,13 @@ void removeFromList(int id_in)
 		}
 		node = node->getNext(); // Iterate.
 	}
-	cout << "\nThere is no student associated with the given ID.";
+	cout << "\nThere is no person associated with the given ID.";
 }
 
 void updateList(int id_in)
 {
 	Person* node = firstPerson;
-	Person* prevNode = node;
+	//Person* prevNode = node;
 	int user_input = 0;
 	while(node != NULL)
 	{
@@ -974,16 +974,6 @@ void updateList(int id_in)
 							old_id = tempStudent->getID(); // Formatting.
 							tempStudent->setID(new_id); // Change the ID.
 							node = tempStudent;
-							if(prevNode == node) // Checks if this is the first node in the list.
-							{
-								node->setNext(NULL); // If so, unlink the current node from the list.
-								insertNode(node); // Re-insert the node so the list is still sorted by GPA.
-							}
-							else // At any other part of the list...
-							{
-								prevNode->setNext(node->getNext()); // Unlink the current node by linking the node before it to the node in front of it.
-								insertNode(node); // Re-insert the node so the list is still sorted by GPA.
-							}
 							printf("\n%d was sucessfully updated to %d", old_id, new_id); // Success message for the user.
 							break; // Leave the switch-case.
 						case 2 : // 2) Update First Name
@@ -1067,16 +1057,7 @@ void updateList(int id_in)
 							old_id = tempProfessor->getID(); // Formatting.
 							tempProfessor->setID(new_id); // Change the ID.
 							node = tempProfessor;
-							if(prevNode == node) // Checks if this is the first node in the list.
-							{
-								node->setNext(NULL); // If so, unlink the current node from the list.
-								insertNode(node); // Re-insert the node so the list is still sorted by GPA.
-							}
-							else // At any other part of the list...
-							{
-								prevNode->setNext(node->getNext()); // Unlink the current node by linking the node before it to the node in front of it.
-								insertNode(node); // Re-insert the node so the list is still sorted by GPA.
-							}
+							//insertNode(node);
 							printf("\n%d was sucessfully updated to %d", old_id, new_id); // Success message for the user.
 							break; // Leave the switch-case.
 						}
@@ -1259,16 +1240,7 @@ void updateList(int id_in)
 							old_id = tempStudent->getID(); // Formatting.
 							tempStudent->setID(new_id); // Change the ID.
 							node = tempStudent;
-							if(prevNode == node) // Checks if this is the first node in the list.
-							{
-								node->setNext(NULL); // If so, unlink the current node from the list.
-								insertNode(node); // Re-insert the node so the list is still sorted by GPA.
-							}
-							else // At any other part of the list...
-							{
-								prevNode->setNext(node->getNext()); // Unlink the current node by linking the node before it to the node in front of it.
-								insertNode(node); // Re-insert the node so the list is still sorted by GPA.
-							}
+							//insertNode(node);
 							printf("\n%d was sucessfully updated to %d", old_id, new_id); // Success message for the user.
 							break; // Leave the switch-case.
 						case 2 : // 2) Update First Name
@@ -1309,7 +1281,7 @@ void updateList(int id_in)
 		}
 		node = node->getNext();
 	}
-	cout << "\nThere is no student associated with the given ID.";
+	cout << "\nThere is no person associated with the given ID.";
 }
 
 void menuDisplay() // Displays the default menu.

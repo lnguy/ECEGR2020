@@ -5,8 +5,8 @@ ID: 96532
 First Name: Emma
 Last Name: Haskin
 Salary: 361524
-Tenured: 0
-Department: English
+Tenured: 1
+Department: Unknown
 
 Professor
 ID: 65132
@@ -53,13 +53,13 @@ Last Name: Tandon
 GPA: 3.98
 
 Employee
-ID: 5612
+ID: 31525
 First Name: Klaus
 Last Name: Ford
 Salary: 61215
 
 Student
-ID: 1234
-First Name: Matthieu
-Last Name: Le
-GPA: 4
+ID: 1111
+First Name: Matthew
+Last Name: Li
+GPA: 3.99
